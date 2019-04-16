@@ -1,0 +1,48 @@
+{% extends 'home.html.twig' %}
+
+{% block body %}
+
+
+    <h2>{{ key|upper }}</h2>
+    <ul class="products columns-4 cart" style="padding-top: 15px" sizes="(min-width: 1200px) 210px, (min-width: 992px) 241px, (max-width: 600px) and (min-width: 412px) 140px, (max-width: 411px) and (min-width: 360px) 100px, 360px">
+        {% for i in products %}
+
+            <li class="post-144 product type-product status-publish has-post-thumbnail product_cat-boy-shoes product_cat-shoes first instock featured shipping-taxable purchasable product-type-simple">
+                <div class="ip-shop-loop-wrap">
+                    <div class="ip-shop-loop-thumb">
+                        <a href="/product/{{ i.MaSanPham }}">
+                            <img src="/images/{{ i.HinhURL }}" class="thumb-shop-catalog front">
+                        </a>
+                    </div>
+                    <div class="ip-shop-loop-details">
+                        <a href="/product/{{ i.MaSanPham }}">
+                        <h3> {{ i.TenSanPham }}</h3>
+                        </a>
+                    </div>
+                    <div class="ip-shop-loop-after-title">
+                        <div class="ip-shop-loop-price">
+                        <span class="price">
+                            <span class="woocommerce-Price-amount amount">
+                                <span class="woocommerce-Price-currencySymbol">₫ </span>{{ i.GiaSanPham }}
+                            </span>
+                        </span>
+                        </div>
+                        <div class="ip-shop-loop-actions">
+                            <a href="/product/add/ {{ i.MaSanPham }}"  class="button product_type_simple add_to_cart_button ajax_add_to_cart" aria-label="Add “{{ i.TenSanPham }}” to your cart" rel="nofollow">
+                                <svg class="svg-add">
+                                    <use xlink:href="#svg-cart">
+
+                                    </use>
+                                </svg>
+                                Add to cart
+                            </a>
+                            <span class="ip-shop-loop-loading"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

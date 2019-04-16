@@ -1,0 +1,2 @@
+composer require annotations
+php bin/console debug:router
